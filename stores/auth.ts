@@ -16,11 +16,14 @@ export const useAuthStore = defineStore("auth", {
     actions: {
         checkToken():string {
 
-            let token = ""
+            let token = "need-login"
 
             if(Cookie.get("TOKEN") != undefined){
                 token = Cookie.get("TOKEN")
             } 
+
+            console.log(token);
+            
             return token 
         },
         async login(payload: AuthEntity){
