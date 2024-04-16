@@ -23,17 +23,8 @@ watch(isCollapse, () => {
 })
 
 </script>
-
-<style scoped>
-.sidebar {
-  width: 200px;
-  background-color: #f0f2f5;
-  height: 100%;
-}
-</style>
 <template>
-    <div class="sidebar">
-        <el-menu default-active="2" height="100%" :collapse="isCollapse" @open="handleOpen"
+        <el-menu default-active="2" :collapse="isCollapse" @open="handleOpen"
         @close="handleClose">
         <el-sub-menu index="1">
             <template #title>
@@ -72,5 +63,4 @@ watch(isCollapse, () => {
             <template #title>Navigator Four</template>
         </el-menu-item>
     </el-menu>
-    </div>
 </template>
