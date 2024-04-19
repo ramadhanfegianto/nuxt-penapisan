@@ -10,6 +10,7 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "@mdi/font": "^7.4.47",
     "@pinia/nuxt": "^0.5.1",
     "js-cookie": "^3.0.5",
     "nuxt": "^3.11.1",
@@ -18,8 +19,8 @@
     "vue-router": "^4.3.0"
   },
   "devDependencies": {
-    "@element-plus/nuxt": "^1.0.8",
     "@nuxtjs/tailwindcss": "^6.11.4",
-    "element-plus": "^2.6.3"
+    "vite-plugin-vuetify": "^2.0.3",
+    "vuetify": "^3.5.16"
   }
 }

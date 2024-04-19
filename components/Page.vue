@@ -2,10 +2,9 @@
 
 <template>
     <div>
-        <el-page-header>
-            <template #breadcrumb>
-                <breadcrumb />
-            </template>
-        </el-page-header>
+        <breadcrumb />
+        <v-card>
+            <slot></slot>
+        </v-card>
     </div>
 </template>

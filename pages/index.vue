@@ -1,16 +1,16 @@
 <script lang="ts" setup>
-    const layoutStore = useLayoutStore()
-    layoutStore.breadcrumb = [{
-        label: "Home",
-        path: "/"
-    }]
+const layoutStore = useLayoutStore()
+layoutStore.breadcrumb = [{
+    label: "Home",
+    path: "/"
+}]
 
 </script>
 
-
-
 <template>
     <page>
-
+        <v-btn>
+            Button
+        </v-btn>
     </page>
 </template>
