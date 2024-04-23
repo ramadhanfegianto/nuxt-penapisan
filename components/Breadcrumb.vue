@@ -4,9 +4,10 @@ const layoutStore = useLayoutStore()
 
 const breadcrumb = layoutStore.breadcrumb
 
+
 </script>
 
 <template>
-    <v-breadcrumbs :items="['Foo', 'Bar', 'Fizz']"></v-breadcrumbs>
+    <v-breadcrumbs :items="breadcrumb"></v-breadcrumbs>
 </template>
 

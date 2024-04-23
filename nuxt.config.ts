@@ -7,7 +7,6 @@ export default defineNuxtConfig({
     transpile: ['vuetify'],
   },
   modules: [
-    '@element-plus/nuxt',
     '@nuxtjs/tailwindcss',
     '@pinia/nuxt',
     (_options, nuxt) => {

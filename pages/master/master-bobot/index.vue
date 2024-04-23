@@ -1,19 +1,27 @@
 <script lang="ts" setup>
+
+definePageMeta({
+    middleware: ['check-auth']
+})
+
 const layoutStore = useLayoutStore()
 layoutStore.breadcrumb = [
-    {
-        label: "Home",
-        path: "/",
-    },
-    {
-        label: "Master",
-        path: "#",
-    },
-    {
-        label: "Master Bobot",
-        path: "/master/master-bobot",
-    }
-]
+        {
+          title: 'Home',
+          disabled: false,
+          href: '/',
+        },
+        {
+          title: 'Master',
+          disabled: false,
+          href: '',
+        },
+        {
+          title: 'Master Bobot',
+          disabled: true,
+          href: '',
+        },
+      ]
 
 </script>
 

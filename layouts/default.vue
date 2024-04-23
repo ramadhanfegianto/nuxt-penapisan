@@ -1,24 +1,26 @@
 <script setup lang="ts">
-import AdminView from "./admin.vue"
+import AdminView from "./admin.vue";
 
-definePageMeta({
-    middleware: ['check-auth']
-})
-const drawer = ref(true)
+const authStore = useAuthStore();
 
+const adminPage = ref(true) as boolean;
+
+const drawer = ref(true) as boolean;
+
+onMounted(() => {     
+  if (authStore.token != "") {
+    adminPage.value = true;
+  }
+});
 </script>
 
-<style scoped>
-
-</style>
-
 <template>
-    <v-layout class="rounded rounded-md">
-        <AdminView></AdminView>
-        <v-main>
-            <v-container fluid>
-                <NuxtPage />
-            </v-container>
-        </v-main>
-    </v-layout>
+  <v-layout class="rounded rounded-md">
+    <template v-if="adminPage"><AdminView></AdminView></template>
+    <v-main class="bg-gray-100">
+      <v-container fluid>
+        <NuxtPage />
+      </v-container>
+    </v-main>
+  </v-layout>
 </template>
