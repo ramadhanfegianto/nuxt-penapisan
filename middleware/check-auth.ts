@@ -1,10 +1,15 @@
-import { useAuthStore } from "~/stores/auth"
+import { useAuthStore } from "~/stores/auth";
 
-export default defineNuxtRouteMiddleware((to, from) => {
-     const authStore = useAuthStore()
+export default defineNuxtRouteMiddleware(async (to, from) => {
+  const authStore = useAuthStore();
 
-     const hasToken = authStore.checkToken()
+  const router = useRouter();
 
-     console.log(hasToken);
+  await authStore.checkToken();
+  
+  if (authStore.getToken == false) {
      
-})
+     // router.push("/login")
+  }  
+
+});

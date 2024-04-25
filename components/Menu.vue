@@ -1,13 +1,13 @@
 <script setup lang="ts">
 
-const props = defineProps(["rail"])
+const props = defineProps<{rail?: boolean}>()
 
 const menus = ref([
   {
-    icon: "mdi-home",
-    title: "Home",
-    value: "Home",
-    href: "/",
+    icon: "mdi-speedometer",
+    title: "Dashboard",
+    value: "Dashboard",
+    href: "/dashboard",
   },
   {
     icon: "mdi-email",
@@ -30,7 +30,7 @@ const menus = ref([
 
 <template>
   <v-list>
-    <NuxtLink v-for="items in menus" :key="items" to="/"
+    <NuxtLink v-for="items in menus" :key="items" :to="items.value"
       ><v-list-item
         :prepend-icon="items.icon"
         :title="items.title"

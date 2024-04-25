@@ -1,4 +1,5 @@
 export interface AuthEntity {
-    username: string,
-    password: string
+    username: String,
+    password: String,
+    tahun: String
 }

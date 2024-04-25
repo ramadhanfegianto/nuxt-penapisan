@@ -2,7 +2,9 @@
 
 import vuetify, { transformAssetUrls } from 'vite-plugin-vuetify'
 export default defineNuxtConfig({
+  runtimeConfig: { API_URL: process.env.API_URL || "http://penapisan-be.localhost/api", },
   devtools: { enabled: true },
+  mode: 'SPA',
   build: {
     transpile: ['vuetify'],
   },
