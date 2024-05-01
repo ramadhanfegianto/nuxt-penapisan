@@ -10,11 +10,11 @@ export default {
     },
 
     async login(payload: AuthEntity): Promise<any> {
-        return await $fetch(baseURL + "/auth/login", { method: "POST", body: payload })
+        return await $fetch(baseURL + "/auth/login", { method: "POST", body: payload }).catch((err) => err.data)
     },
 
     async logout(): Promise<any> {
-        return await $fetch(baseURL + "/auth/login", { method: "POST", body: payload })
+        return await $fetch(baseURL + "/auth/login", { method: "POST", body: payload }).catch((err) => err.data)
     }
 
 }

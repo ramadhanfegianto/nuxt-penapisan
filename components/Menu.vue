@@ -1,6 +1,5 @@
 <script setup lang="ts">
-
-const props = defineProps<{rail?: boolean}>()
+const props = defineProps<{ rail?: boolean }>();
 
 const menus = ref([
   {
@@ -13,12 +12,12 @@ const menus = ref([
     icon: "mdi-email",
     title: "Inbox",
     value: "inbox",
-    href:"/"
+    href: "/",
   },
   {
     icon: "mdi-account-supervisor-circle",
-    title: "Supervisors",
-    value: "supervisors",
+    title: "Manajemen Pengguna",
+    value: "manajemen-pengguna",
   },
   {
     icon: "mdi-clock-start",
@@ -30,16 +29,16 @@ const menus = ref([
 
 <template>
   <v-list>
-    <NuxtLink v-for="items in menus" :key="items" :to="items.value"
-      ><v-list-item
+    <v-list-item
+        v-for="items in menus" :key="items"
+        color="primary"
         :prepend-icon="items.icon"
         :title="items.title"
         :value="items.value"
-      ></v-list-item
-    ></NuxtLink>
-
+        :to="items.value"
+        exact
+      ></v-list-item>
     <v-list-subheader v-if="props.rail">PENGGUNA</v-list-subheader>
     <v-list-item prepend-icon="mdi-account-circle" title="Users"></v-list-item>
-
   </v-list>
 </template>

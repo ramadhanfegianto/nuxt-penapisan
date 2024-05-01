@@ -16,8 +16,7 @@ const doAction =  async () => {
 <template>
   <page>
     <div class="m-3">
-      <v-btn @click="doAction">Get User</v-btn>
-      {{ commonStore.data }}
+      WELCOME <b>{{ commonStore.data?.nama }}</b>
     </div>
   </page>
 </template>

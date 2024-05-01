@@ -1,4 +1,5 @@
 import { ofetch } from 'ofetch'
+import Swal from 'sweetalert2'
 import { useAuthStore } from '~/stores/auth'
 
 export default defineNuxtPlugin((_nuxtApp) => {
@@ -21,6 +22,7 @@ export default defineNuxtPlugin((_nuxtApp) => {
       console.log(response.status)
 
       if (response.status == 401){
+        Swal.fire()
         navigateTo("/login")
       }
     }
